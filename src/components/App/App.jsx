@@ -3,6 +3,7 @@ import css from './App.module.css'
 import Description from '../Description/Description';
 import Options from '../Options/Options';
 import Feedback from '../Feedback/Feedback';
+import Notification from "../Notification/Notification";
 
 export default function App() {
     const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
@@ -39,7 +40,7 @@ export default function App() {
             {totalFeedback > 0 ? (
                 <Feedback feedback={feedback} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} />
             ) : (
-                <p>No feedback</p>
+                <Notification />
             )}
         </div>
     );
